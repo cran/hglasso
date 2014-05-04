@@ -1,12 +1,13 @@
 \name{image.hglasso}
 \alias{image.hglasso}
 \alias{image.hcov}
+\alias{image.hbn}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Image plot of an object of class \code{hglasso} or \code{hcov}
+Image plot of an object of class \code{hglasso}, \code{hcov}, or \code{hbn}
 }
 \description{
-This function plots a hglasso or hcov --- the estimated matrix V and Z from \code{\link{hglasso}} or \code{\link{hcov}}
+This function plots a hglasso or hcov --- the estimated matrix V and Z from \code{\link{hglasso}}, \code{\link{hcov}}, or \code{\link{hbn}}
 }
 \usage{
 \method{image}{hglasso}(x, \dots) 
@@ -14,14 +15,14 @@ This function plots a hglasso or hcov --- the estimated matrix V and Z from \cod
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-an object of class hglasso or hcov.
+an object of class hglasso, hcov, or hbn.
 }
   \item{\dots}{
 additional parameters to be passed to \code{\link{image}}.
 }
 }
 \details{
-The estimated inverse covariance matrix from \code{\link{hglasso}} or covariance matrix from \code{\link{hcov}} can be decomposed as Z + V + t(V), where V is a matrix that contains hub nodes.  This function creates image plots of Z and V.   
+The estimated inverse covariance matrix from \code{\link{hglasso}},  covariance matrix from \code{\link{hcov}}, and estimated binary network \code{\link{hbn}} can be decomposed as Z + V + t(V), where V is a matrix that contains hub nodes.  This function creates image plots of Z and V.   
 }
 \references{
 Tan et al. (2014). Learning graphical models with hubs.  arXiv.org/pdf/1402.7349.pdf.
@@ -35,6 +36,7 @@ Kean Ming Tan
 \code{\link{summary.hglasso}}
 \code{\link{hglasso}}
 \code{\link{hcov}}
+\code{\link{hbn}}
 }
 \examples{
 ##############################################

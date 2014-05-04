@@ -202,3 +202,99 @@ updateGamma <- function(Theta,V,Z,W1,W2,W3,rho){
   Gamma <- rho/6*(Theta+W1-V-t(V)-Z-W2-t(W2)-W3)
   return(Gamma)	
 }
+
+######################################################
+# Returns gradient for logistic regression loss 
+######################################################
+gradient_eval_symmetric <- function(Theta,Xhat,A,X,rho){
+	p = nrow(Theta);
+	n = nrow(X);
+	grad <- array(0,c(p,p))
+
+	temp <- array(0,c(p,n))
+	temp <- exp(diag(Theta)%*%array(1,c(1,n)) + Theta%*%t(X) - diag(diag(Theta))%*%
+	t(X))/
+	(1 + exp(diag(Theta)%*%array(1,c(1,n)) + Theta%*%t(X) - diag(diag(Theta))%*%t(X)))
+	
+	for (k in 1:p){
+		grad[k,] = -Xhat[k,] - t(Xhat[,k]) + 
+		 colSums(t( array(rep( exp(Theta[k,k] + Theta[k,]%*%t(X) - 
+			       Theta[k,k]%*%t(X[,k]) ) /
+			       (1 + exp(Theta[k,k] + Theta[k,]%*%t(X) - 
+			       Theta[k,k]%*%t(X[,k])) ), each = p), c(p,n) )*t(X) )) +
+	   	colSums(t(temp*array( rep(t(X[,k]),each = p), c(p,n)))) + 
+	   	rho*(Theta[k,] - A[k,]) + rho*(t(Theta[,k]) - t(A[,k]));
+
+		grad[k,k] = -Xhat[k,k] + colSums(t( exp(Theta[k,k] + Theta[k,]%*%t(X) -
+				  Theta[k,k]%*%t(X[,k]) ) /
+				  (1 + exp(Theta[k,k] + Theta[k,]%*%t(X) -
+				   Theta[k,k]%*%t(X[,k]))) )) + 
+		          rho*(Theta[k,k] - A[k,k]);
+
+			}
+
+	return(grad)
+
+}
+
+
+######################################################
+# Main algorithm to solve penalized logistic regression 
+# using Barzilai Borwein method
+######################################################
+BB_logistic <- function(X,A,rho){
+	Xhat <- t(X)%*%X;
+	
+	n  = nrow(X);
+	p = ncol(X);
+	
+	
+	Theta <- diag(p);
+	Theta_old <- 2*diag(p);
+
+	D <- array(0,c(p,p));
+	D_old <- array(0,c(p,p));
+	D_old <- gradient_eval_symmetric(Theta_old,Xhat,A,X,rho);
+
+	S <- array(0,c(p,p));
+	Y <- array(0,c(p,p));
+	alpha_bb <- 0;
+
+	# Algorithm parameters
+	max_iter <- 400;
+	tol = 1e-5;
+		
+ 	iter <- max_iter;
+ 	
+	# Main algorithm
+	
+	for (ind in 1:max_iter)
+	{
+		S <- Theta - Theta_old;
+		Theta_old <- Theta;
+		D <- gradient_eval_symmetric(Theta,Xhat,A,X,rho);
+		Y <- D - D_old;
+		D_old <- D;
+		
+		alpha_bb <- min( sum(c(S)*c(S))/(sum(c(S)*c(Y))), 
+				 sum(c(S)*c(Y))/sum(c(Y)*c(Y)) ); # BB step size
+		
+		Theta <- Theta - alpha_bb*D; # Gradient descent step
+		
+		rel_err <- norm(Theta - Theta_old,'f')/norm(Theta_old,'f');
+#		print(rel_err)
+		if (rel_err < tol)
+		{
+			iter <- ind;
+			break;		
+		}		 				
+			
+	}			 
+
+	norm_grad <- max(max(abs(D)));
+	
+	return(Theta);
+}
+
+
+

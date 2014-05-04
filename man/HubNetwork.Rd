@@ -4,7 +4,7 @@
 Hub network generation
 }
 \description{
-Generate an inverse covariance matrix or covariance matrix with hub structure
+Generate an inverse covariance matrix, covariance matrix, or binary network with hub structure
 }
 \usage{
 HubNetwork(p, sparsity, hubnumber, hubsparsity, type = "Gaussian")
@@ -24,12 +24,12 @@ The number of hubs in the network
 Sparsity level within each hub
 }
   \item{type}{
-Type of network. The default value type="Gaussian" generates an inverse covariance matrix.  type="covariance" generated a covariance matrix with hubs.  
+Type of network. The default value type="Gaussian" generates an inverse covariance matrix.  type="covariance" generates a covariance matrix with hubs.  type="binary" generates a binary network with hubs.  
 }
 }
 
 \value{
-\item{Theta}{Theta is the generated inverse covariance matrix or covariance matrix.}
+\item{Theta}{Theta is the generated inverse covariance matrix, covariance matrix, or binary network.}
 \item{hubcol}{hubcol contains indices for features that are hubs.}
 }
 \references{
@@ -46,6 +46,9 @@ Theta <- HubNetwork(p,0.95,5,0.3)$Theta
 
 # Generate covariance matrix with 5 hubs with similar structure
 Sigma <- HubNetwork(p,0.95,5,0.3,type="covariance")$Theta
+
+# Generate binary network with 2 hubs with p=10
+Theta <- HubNetwork(p=10,0.95,2,0.3,type="binary")$Theta
 }
 
 

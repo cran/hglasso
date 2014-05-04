@@ -5,7 +5,7 @@ if(sparsity<0 || sparsity>1) stop("sparsity has to take value between 0 and 1!")
 
 if(hubsparsity<0 || hubsparsity>1) stop("hubsparsity has to take value between 0 and 1!")
 
-if(type!="Gaussian" && type!="covariance") stop("type can only takes argument Gaussian or covariance!")
+if(type!="Gaussian" && type!="covariance" && type!="binary") stop("type can only takes argument Gaussian, covariance, or binary!")
 
 if(hubnumber>p) stop("hubnumber cannot be larger than the number of features!")
 
@@ -21,6 +21,11 @@ if(hubnumber<0) stop("hubnumber cannot be negative!")
   hubcol <- sample(1:p,hubnumber,replace=FALSE)
   Theta[,hubcol] <- rbinom(hubnumber*p,1,1-hubsparsity)*sample(c(-1,1),hubnumber*p,replace=TRUE)*runif(hubnumber*p,0.25,0.75)
   Theta <- (Theta+t(Theta))/2
+  
+  if(type=="binary"){ 
+  	diag(Theta) <- sample(c(-1,1),p,replace=TRUE)*runif(p,0.25,0.75)
+  	return(list(Theta=Theta,hubcol=hubcol))
+  	}
   
 # Make the matrix positive definite  
     diag(Theta) <- 0

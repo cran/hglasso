@@ -1,12 +1,13 @@
 \name{plot.hglasso}
 \alias{plot.hglasso}
 \alias{plot.hcov}
+\alias{plot.hbn}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Plot an object of class \code{hglasso} or \code{hcov}
+Plot an object of class \code{hglasso}, \code{hcov}, or \code{hbn}
 }
 \description{
-This function plots an object hglasso or hcov --- graphical representation of the estimated inverse covariance matrix from \code{\link{hglasso}} or covariance matrix from \code{\link{hcov}}
+This function plots an object hglasso or hcov --- graphical representation of the estimated inverse covariance matrix from \code{\link{hglasso}}, covariance matrix from \code{\link{hcov}}, or binary network from \code{\link{hbn}}
 }
 \usage{
 \method{plot}{hglasso}(x, layout=NULL,\dots) 
@@ -14,7 +15,7 @@ This function plots an object hglasso or hcov --- graphical representation of th
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-an object of class \code{\link{hglasso}} or \code{\link{hcov}}.
+an object of class \code{\link{hglasso}}, \code{\link{hcov}}, or \code{\link{hbn}}.
 }
   \item{layout}{
 the layout of the graph to use.  If not specified, \code{\link{layout.kamada.kawai}} is used.
@@ -41,6 +42,7 @@ Kean Ming Tan
 \code{\link{summary.hglasso}}
 \code{\link{hglasso}}
 \code{\link{hcov}}
+\code{\link{hbn}}
 }
 \examples{
 ##############################################

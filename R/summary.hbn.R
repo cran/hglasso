@@ -1,6 +1,6 @@
-summary.hglasso <- function(object, ...){
+summary.hbn <- function(object, ...){
 	x <- object
-	cat("Summary for the object \"hglasso\"\n")
+	cat("Summary for the object \"hbn\"\n")
 	cat("Information of the optimization problem: \n")
 	print(data.frame("n" = x$n, "p" = x$p, "lambda1" = signif(x$lambda1,2),"lambda2" = signif(x$lambda2,2),"lambda3" = signif(x$lambda3,2)),...)
 	
