@@ -31,7 +31,7 @@ Default value of trace=FALSE. If trace=TRUE, the progress of Gibbs sampling is p
 \item{X}{An n x p matrix of samples generated from the binary network specified by Theta.}
 }
 \references{
-Tan et al. (2014). Learning graphical models with hubs.  arXiv.org/pdf/1402.7349.pdf.
+Tan et al. (2014). Learning graphical models with hubs. To appear in Journal of Machine Learning Research. arXiv.org/pdf/1402.7349.pdf.
 }
 \author{
 Kean Ming Tan}

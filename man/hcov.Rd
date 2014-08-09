@@ -65,7 +65,7 @@ Among some internal variables, this object includes the elements
 }
 
 \references{
-Tan et al. (2014). Learning graphical models with hubs.  arXiv.org/pdf/1402.7349.pdf.
+Tan et al. (2014). Learning graphical models with hubs. To appear in Journal of Machine Learning Research.  arXiv.org/pdf/1402.7349.pdf.
 
 Xue et al. (2012).  Positive-definite l1-penalized estimation of large covariance matrices.  Journal of the American Staitstical Association, 107:1480-1491.
 }

@@ -76,7 +76,7 @@ if(start!="cold" && start!="warm") stop("Invalid argument")
 	tempV<-V
 	diag(tempV) <- 0
     tempV[which(abs(tempV)<1e-5)] <- 0
-  	hubind <- which(apply(tempV,2,sum)!=0)
+  	hubind <- which(apply(abs(tempV),2,sum)!=0)
 
 # return output
 	out <- list()

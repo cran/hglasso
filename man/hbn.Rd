@@ -59,12 +59,12 @@ an object of class hbn.
 Among some internal variables, this object includes the elements 
 
 \item{Theta}{Theta is the estimated inverse covariance matrix. Note that Theta = Z + V + t(V).}
-\item{V}{V is the estimated matrix that contain hub nodes used to compute Theta.}
+\item{V}{V is the estimated matrix that contains hub nodes used to compute Theta.}
 \item{Z}{Z is the estimated sparse matrix used to compute Theta.}
 \item{hubind}{Indices for features that are estimated to be hub nodes}
 }
 \references{
-Tan et al. (2014). Learning graphical models with hubs.  arXiv.org/pdf/1402.7349.pdf.
+Tan et al. (2014). Learning graphical models with hubs. To appear in Journal of Machine Learning Research. arXiv.org/pdf/1402.7349.pdf.
 
 Hofling, H. and Tibshirani, R. (2009). Estimation of sparse binary pairwise Markov networks using pseudo-likelihoods. Journal of Machine Learning Research, 10:883-906. 
 

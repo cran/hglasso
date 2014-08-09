@@ -25,7 +25,7 @@ additional parameters to be passed to \code{\link{image}}.
 The estimated inverse covariance matrix from \code{\link{hglasso}},  covariance matrix from \code{\link{hcov}}, and estimated binary network \code{\link{hbn}} can be decomposed as Z + V + t(V), where V is a matrix that contains hub nodes.  This function creates image plots of Z and V.   
 }
 \references{
-Tan et al. (2014). Learning graphical models with hubs.  arXiv.org/pdf/1402.7349.pdf.
+Tan et al. (2014). Learning graphical models with hubs. To appear in Journal of Machine Learning Research. arXiv.org/pdf/1402.7349.pdf.
 }
 \author{
 Kean Ming Tan

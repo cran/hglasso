@@ -33,7 +33,7 @@ Type of network. The default value type="Gaussian" generates an inverse covarian
 \item{hubcol}{hubcol contains indices for features that are hubs.}
 }
 \references{
-Tan et al. (2014). Learning graphical models with hubs.  arXiv.org/pdf/1402.7349.pdf.
+Tan et al. (2014). Learning graphical models with hubs. To appear in Journal of Machine Learning Research.  arXiv.org/pdf/1402.7349.pdf.
 }
 \author{
 Kean Ming Tan}

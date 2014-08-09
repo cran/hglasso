@@ -56,7 +56,7 @@ an object of class hglasso.
 Amog some internal variables, this object include the elements 
 
 \item{Theta}{Theta is the estimated inverse covariance matrix. Note that Theta = Z + V + t(V).}
-\item{V}{V is the estimated matrix that contain hub nodes used to compute Theta.}
+\item{V}{V is the estimated matrix that contains hub nodes used to compute Theta.}
 \item{Z}{Z is the estimated sparse matrix used to compute Theta.}
 \item{objective}{Objective is the minimized objective value of the loss-function considered in Section 3 of Tan et al. (2014).}
 \item{hubind}{Indices for features that are estimated to be hub nodes}
@@ -65,7 +65,7 @@ Amog some internal variables, this object include the elements
 
 }
 \references{
-Tan et al. (2014). Learning graphical models with hubs.  arXiv.org/pdf/1402.7349.pdf.
+Tan et al. (2014). Learning graphical models with hubs. To appear in Journal of Machine Learning Research. arXiv.org/pdf/1402.7349.pdf.
 
 Friedman et al. (2007). Sparse inverse covariance estimation with the lasso. Biostatistics, 9(3):432-441.
 
@@ -82,6 +82,7 @@ Kean Ming Tan
   \code{\link{image.hglasso}}
   \code{\link{plot.hglasso}}
   \code{\link{summary.hglasso}}
+  \code{\link{hglassoBIC}}
   }
 \examples{
 ##############################################

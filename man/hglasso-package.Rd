@@ -19,8 +19,8 @@ The first function, hglasso, performs hub graphical lasso.  The second function,
 \tabular{ll}{
 Package: \tab hglasso\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2014-05-4\cr
+Version: \tab 1.2\cr
+Date: \tab 2014-08-09\cr
 License: \tab GPL (>=2.0) \cr
 LazyLoad: \tab yes \cr
 }
@@ -34,8 +34,9 @@ The package includes the following functinos:
 \code{\link{HubNetwork}}:\tab Generates inverse covariance matrix or covariance matrix with hubs \cr
 \code{\link{binaryMCMC}}:\tab Generates samples for binary Ising model via Gibbs sampling \cr
 \code{\link{image.hglasso}}: \tab Creates image plot of the matrix V and Z\cr
-\code{\link{plot.hglasso}}: \tab Creates a graphical representation of the esitmated matrix Theta \cr
+\code{\link{plot.hglasso}}: \tab Creates a graphical representation of the estimated matrix Theta \cr
 \code{\link{summary.hglasso}}: \tab Provides summary for the matrix Theta, Z, and V  \cr
+\code{\link{hglassoBIC}}: \tab Calculate BIC-type criterion for \code{\link{hglasso}} \cr
 }
 }
 \author{
@@ -47,7 +48,7 @@ Maintainer: Kean Ming Tan <keanming@uw.edu>
 
 }
 \references{
-Tan, KM., London, P., Mohan, K., Lee, S-I., Fazel, M., and Witten, D. (2014). Learning graphical models with hubs.  arXiv.org/pdf/1402.7349.pdf.
+Tan, KM., London, P., Mohan, K., Lee, S-I., Fazel, M., and Witten, D. (2014). Learning graphical models with hubs. To appear in Journal of Machine Learning Research. arXiv.org/pdf/1402.7349.pdf.
 }
 \keyword{ package }
 
