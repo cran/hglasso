@@ -48,7 +48,7 @@ Maintainer: Kean Ming Tan <keanming@uw.edu>
 
 }
 \references{
-Tan, KM., London, P., Mohan, K., Lee, S-I., Fazel, M., and Witten, D. (2014). Learning graphical models with hubs. To appear in Journal of Machine Learning Research. arXiv.org/pdf/1402.7349.pdf.
+Tan, KM., London, P., Mohan, K., Lee, S-I., Fazel, M., and Witten, D. (2014). Learning graphical models with hubs. Journal of Machine Learning Research 15(Oct):3297-3331.
 }
 \keyword{ package }
 

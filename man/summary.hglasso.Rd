@@ -27,7 +27,7 @@ any other arguments passed to \code{print}.
 Some information for an object hglasso, hcov, or hbn: (1) The number of observations n and the number of features p.  (2) The number of edges in Theta, V, and Z. (3) The indices for hub nodes, and also the number of edges within each hub node.}
 
 \references{
-Tan et al. (2014). Learning graphical models with hubs. To appear in Journal of Machine Learning Research.  arXiv.org/pdf/1402.7349.pdf.
+Tan et al. (2014). Learning graphical models with hubs. Journal of Machine Learning Research 15(Oct):3297-3331.
 }
 \author{
 Kean Ming Tan 

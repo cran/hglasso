@@ -119,7 +119,7 @@ updateTheta <- function(tildeTheta,W1,S,rho){
   a <- eigen(C)
   D <- diag(a$values)
   U <- a$vectors
-  Theta <- 1/2*U%*%(D+sqrt(D*D+4/rho*diag(rep(1,nrow(S)))))%*%t(U)		
+  Theta <- 1/2*U%*%(D+sqrt(D*D+4/rho*diag(rep(1,nrow(S)))))%*%t(U)			
   return(Theta)
 }
 
